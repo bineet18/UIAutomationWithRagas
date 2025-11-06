@@ -1,0 +1,17 @@
+# Quick Setup Instructions
+
+1. Install dependencies:
+   pip install -r requirements.txt
+
+2. Set up OpenAI API key:
+   - Rename .env.example to .env
+   - Add your OpenAI API key to .env
+
+3. Update test with your chatbot URL:
+   - Edit test_chatbot_evaluation.py
+   - Replace "https://your-chatbot-ui.com" with actual URL
+   - Update selectors (#chat-input, #send-button, #latest-response) as needed
+
+4. Run the test:
+   - playwright install chromium
+   - pytest test_chatbot_evaluation.py -v
