@@ -64,7 +64,3 @@ As a POC, this project focuses on basic functionality and may require adjustment
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-## Contact
-
-For inquiries or contributions, please contact [your-email@example.com].
