@@ -19,7 +19,7 @@ def test_chatgpt_factual(page: Page):
     question = "When was the first Super Bowl?"
     page.fill("#prompt-textarea", question)
     page.keyboard.press("Enter")
-    page.wait_for_timeout(20000)
+    page.wait_for_timeout(20000) #Added static timeout to allow for response generation
 
     latest_response = page.locator('[data-message-author-role="assistant"]').last
     expect(latest_response).to_be_visible()
