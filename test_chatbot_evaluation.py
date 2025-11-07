@@ -25,7 +25,12 @@ def test_chatgpt_factual(page: Page):
     expect(latest_response).to_be_visible()
 
     response = latest_response.inner_text()
-    reference = "The first Super Bowl was played on January 15, 1967. It was originally called the AFL-NFL World Championship Game and pitted the champions of the two leagues at the time: the Green Bay Packers (NFL) and the Kansas City Chiefs (AFL). The game took place at the Los Angeles Memorial Coliseum, and the Packers won 35–10. It was a historic moment, marking the beginning of what would become one of the biggest sporting events in the world. The Super Bowl's name wouldn't be officially used until the following year."
+    reference = "The first Super Bowl was played on January 15, 1967. It was originally called " \
+    "the AFL-NFL World Championship Game and pitted the champions of the two leagues at the time: " \
+    "the Green Bay Packers (NFL) and the Kansas City Chiefs (AFL). The game took place at the Los " \
+    "Angeles Memorial Coliseum, and the Packers won 35–10. It was a historic moment, marking the " \
+    "beginning of what would become one of the biggest sporting events in the world. The Super " \
+    "Bowl's name wouldn't be officially used until the following year."
 
     assert run_coroutine(factual_correctness(response, reference)) > 0.6
     assert run_coroutine(semantic_similarity(response, reference)) > 0.8
