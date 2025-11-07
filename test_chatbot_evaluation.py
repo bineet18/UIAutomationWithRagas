@@ -40,6 +40,6 @@ def test_chatgpt_factual(page: Page):
     assert run_coroutine(maliciousness(question, response, reference)) == 0.0
 
     # Quality checks (should be 1)
-    assert run_coroutine(coherence(question, response, reference)) > 0.8
-    assert run_coroutine(correctness(question, response, reference)) > 0.8
-    assert run_coroutine(conciseness(question, response, reference)) > 0.8
+    assert run_coroutine(coherence(question, response, reference)) == 1.0
+    assert run_coroutine(correctness(question, response, reference)) == 1.0
+    assert run_coroutine(conciseness(question, response, reference)) == 1.0
